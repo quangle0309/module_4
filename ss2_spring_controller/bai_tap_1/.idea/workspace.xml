@@ -5,33 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ca01be9-9593-424e-ba36-f7caf41aa543" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bai_tap_1/controllers/SandwichController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bai_tap_1/repositories/SandwichRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bai_tap_1/services/SandwichService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_tap_2/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_tap_2/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_tap_2/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../thuc_hanh_gradle/src/main/java/com/example/thuc_hanh_gradle/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../thuc_hanh_gradle/src/main/webapp/WEB-INF/views/home.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../thuc_hanh_gradle/src/main/webapp/WEB-INF/views/success.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../thuc_hanh_mvn/src/main/java/com/example/thuc_hanh_mvn/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../thuc_hanh_mvn/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../thuc_hanh_mvn/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../thuc_hanh_mvn/src/main/webapp/WEB-INF/views/home.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../thuc_hanh_mvn/src/main/webapp/WEB-INF/views/success.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../thuc_hanh_mvn/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../thuc_hanh_timezone/src/main/java/com/example/thuc_hanh_timezone/TimeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../thuc_hanh_timezone_mvn/src/main/java/com/example/thuc_hanh_timezone_mvn/TimeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../thuc_hanh_timezone_mvn/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../thuc_hanh_timezone_mvn/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../thuc_hanh_timezone_mvn/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../thuc_hanh_timezone_mvn/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cau_hinh/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../cau_hinh/dispatcher-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss1_tong_quan_mvc/dictionary/src/main/java/com/example/dictionary/repositories/IDictionaryRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss1_tong_quan_mvc/dictionary/src/main/java/com/example/dictionary/services/IDictionaryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bai_tap_1/repositories/ISandwichRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bai_tap_1/services/ISandwichService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss1_tong_quan_mvc/dictionary/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1_tong_quan_mvc/dictionary/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss1_tong_quan_mvc/dictionary/src/main/java/com/example/dictionary/controllers/DictionaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1_tong_quan_mvc/dictionary/src/main/java/com/example/dictionary/controllers/DictionaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss1_tong_quan_mvc/dictionary/src/main/java/com/example/dictionary/repositories/DictionaryRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1_tong_quan_mvc/dictionary/src/main/java/com/example/dictionary/repositories/impl/DictionaryRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss1_tong_quan_mvc/dictionary/src/main/java/com/example/dictionary/services/DictionaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1_tong_quan_mvc/dictionary/src/main/java/com/example/dictionary/services/impl/DictionaryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bai_tap_1/controllers/SandwichController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bai_tap_1/controllers/SandwichController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bai_tap_1/repositories/SandwichRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bai_tap_1/repositories/impl/SandwichRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bai_tap_1/services/SandwichService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bai_tap_1/services/impl/SandwichService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,11 +27,29 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="bai_tap_1" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -61,9 +63,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2jGyPyje5iLMbkOkldGSNVs3Ar7" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -76,7 +78,7 @@
     "Tomcat Server.Tomcat 9.0.89.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/module_4/ss2_spring_controller/bai_tap_1/src/main/webapp/WEB-INF",
+    "last_opened_file_path": "D:/module_4/ss2_spring_controller/bai_tap_2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -199,6 +201,7 @@
       <option name="presentableId" value="Default" />
       <updated>1721027692763</updated>
       <workItem from="1721027693823" duration="4207000" />
+      <workItem from="1721095409971" duration="176000" />
     </task>
     <servers />
   </component>

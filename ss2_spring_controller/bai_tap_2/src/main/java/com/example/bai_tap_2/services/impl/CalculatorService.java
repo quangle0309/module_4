@@ -1,9 +1,10 @@
-package com.example.bai_tap_2.services;
+package com.example.bai_tap_2.services.impl;
 
+import com.example.bai_tap_2.services.ICalculatorService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CalculatorService {
+public class CalculatorService implements ICalculatorService {
 
     public double calculate(double firstNumber, double lastNumber, String operator) {
         double result = 0;

@@ -1,6 +1,6 @@
 package com.example.dictionary.controllers;
 
-import com.example.dictionary.services.DictionaryService;
+import com.example.dictionary.services.impl.DictionaryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
