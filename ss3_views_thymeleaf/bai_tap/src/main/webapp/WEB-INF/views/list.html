@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="/layout :: head">
+    <title>Danh sác sản phẩm</title>
+</head>
+<body>
+<div th:replace="/layout :: navbar">
+</div>
+<div class="container mt-5">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>STT</td>
+            <td>Tên sản phẩm</td>
+            <td>Giá</td>
+            <td>Mô tả</td>
+            <td>Nhà sản xuất</td>
+            <td>#</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product, rowStat : ${products}">
+            <td th:text="${rowStat.count}"></td>
+            <td th:text="${product.getName}"></td>
+            <td th:text="${product.getPrice}"></td>
+            <td th:text="${product.getDescription}"></td>
+            <td th:text="${product.getManufacturer}"></td>
+            <td>
+                <a class="btn btn-sm btn-primary me-2" th:href="@{/products/{id}/update(id=${product.getId})}">Chỉnh sửa</a>
+                <a class="btn btn-sm btn-danger" th:href="@{/products/{id}/delete(id=${product.getId})}">Xóa</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script th:if="${message != null}">
+    Swal.fire({
+        icon: "success",
+        title: "Thêm mới thành công!",
+        showConfirmButton: false,
+        timer: 1500
+    });
+</script>
+<script th:if="${updateMessage != null}">
+    Swal.fire({
+        icon: "success",
+        title: "Cập nhật thành công!",
+        showConfirmButton: false,
+        timer: 1500
+    });
+</script>
+</body>
+</html>
