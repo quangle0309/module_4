@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmailSettingService implements IEmailSettingService {
     @Autowired
-    IEmailSettingRepo emailSettingRepo;
+    private IEmailSettingRepo emailSettingRepo;
 
     @Override
     public void add(EmailSetting mailSetting) {
