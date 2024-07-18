@@ -60,7 +60,7 @@ function renderPagination(pageData) {
 }
 
 $(document).ready(() => {
-    header().then(data => {
+    header().then(() => {
         $('#search').click(() => searchBlogs(0));
     });
     listBlogs();
