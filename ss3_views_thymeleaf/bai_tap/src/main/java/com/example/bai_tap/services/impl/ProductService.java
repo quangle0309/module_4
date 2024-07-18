@@ -1,7 +1,7 @@
 package com.example.bai_tap.services.impl;
 
 import com.example.bai_tap.models.Product;
-import com.example.bai_tap.repositories.impl.ProductRepo;
+import com.example.bai_tap.repositories.IProductRepo;
 import com.example.bai_tap.services.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class ProductService implements IProductService {
     @Autowired
-    private ProductRepo productRepo;
+    private IProductRepo productRepo;
 
     @Override
     public Object getAll() {
