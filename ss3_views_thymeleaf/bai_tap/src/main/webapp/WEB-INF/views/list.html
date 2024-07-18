@@ -21,14 +21,14 @@
         <tbody>
         <tr th:each="product, rowStat : ${products}">
             <td th:text="${rowStat.count}"></td>
-            <td th:text="${product.getName}"></td>
-            <td><span th:text="${product.getPrice}"></span>$</td>
-            <td th:text="${product.getDescription}"></td>
-            <td th:text="${product.getManufacturer}"></td>
+            <td th:text="${product.name}"></td>
+            <td><span th:text="${#numbers.formatCurrency(product.price)}"></span></td>
+            <td th:text="${product.description}"></td>
+            <td th:text="${product.manufacturer}"></td>
             <td>
-                <a class="btn btn-sm btn-warning me-2 text-light" th:href="@{/products/{id}/detail(id=${product.getId})}">Chi tiết</a>
-                <a class="btn btn-sm btn-primary me-2" th:href="@{/products/{id}/update(id=${product.getId})}">Chỉnh sửa</a>
-                <a class="btn btn-sm btn-danger" th:href="@{/products/{id}/delete(id=${product.getId})}">Xóa</a>
+                <a class="btn btn-sm btn-warning me-2 text-light" th:href="@{/products/{id}/detail(id=${product.getId()})}">Chi tiết</a>
+                <a class="btn btn-sm btn-primary me-2" th:href="@{/products/{id}/update(id=${product.getId()})}">Chỉnh sửa</a>
+                <a class="btn btn-sm btn-danger" th:href="@{/products/{id}/delete(id=${product.getId()})}">Xóa</a>
             </td>
         </tr>
         </tbody>

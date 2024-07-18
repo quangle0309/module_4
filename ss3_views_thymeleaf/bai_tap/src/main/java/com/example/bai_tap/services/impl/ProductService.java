@@ -14,7 +14,7 @@ public class ProductService implements IProductService {
     private IProductRepo productRepo;
 
     @Override
-    public Object getAll() {
+    public List<Product> getAll() {
         return productRepo.getAll();
     }
 
@@ -24,7 +24,7 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public Object findById(int id) {
+    public Product findById(long id) {
         return productRepo.findById(id);
     }
 
@@ -34,12 +34,12 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public boolean deleteByid(int id) {
+    public boolean deleteById(long id) {
         return productRepo.deleteById(id);
     }
 
     @Override
-    public List<Product> searchByName(String name) {
-        return productRepo.searchByName(name);
+    public List<Product> searchByName(String keyword) {
+        return productRepo.searchByName(keyword);
     }
 }

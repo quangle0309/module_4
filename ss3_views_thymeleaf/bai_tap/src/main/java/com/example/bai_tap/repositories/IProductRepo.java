@@ -5,15 +5,15 @@ import com.example.bai_tap.models.Product;
 import java.util.List;
 
 public interface IProductRepo {
-    Object getAll();
+    List<Product> getAll();
 
     void save(Product product);
 
-    Object findById(int id);
+    Product findById(long id);
 
     void updateProduct(Product product);
 
-    boolean deleteById(int id);
+    boolean deleteById(long id);
 
     List<Product> searchByName(String name);
 }

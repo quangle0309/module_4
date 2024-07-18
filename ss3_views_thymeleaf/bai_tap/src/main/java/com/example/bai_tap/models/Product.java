@@ -1,8 +1,12 @@
 package com.example.bai_tap.models;
 
+import javax.persistence.*;
 
+@Entity (name = "products")
 public class Product {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     private String name;
     private double price;
     private String description;
@@ -11,7 +15,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(int id, String name, double price, String description, String manufacturer) {
+    public Product(long id, String name, double price, String description, String manufacturer) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -19,11 +23,11 @@ public class Product {
         this.manufacturer = manufacturer;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

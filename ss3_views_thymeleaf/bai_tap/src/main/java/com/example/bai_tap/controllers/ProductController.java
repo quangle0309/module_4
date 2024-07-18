@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
+
 
 @Controller
 @RequestMapping("/products")
@@ -35,7 +37,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}/update")
-    public String update(@PathVariable int id, Model model) {
+    public String update(@PathVariable long id, Model model) {
         model.addAttribute("product", productService.findById(id));
         return "/update";
     }
@@ -48,8 +50,8 @@ public class ProductController {
     }
 
     @GetMapping("/{id}/delete")
-    public String delete(@PathVariable int id, RedirectAttributes redirect) {
-        boolean result = productService.deleteByid(id);
+    public String delete(@PathVariable long id, RedirectAttributes redirect) {
+        boolean result = productService.deleteById(id);
         redirect.addFlashAttribute("deleteMessage", result);
         return "redirect:/products";
     }
@@ -61,7 +63,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}/detail")
-    public String detail(@PathVariable int id, Model model) {
+    public String detail(@PathVariable long id, Model model) {
         model.addAttribute("product", productService.findById(id));
         return "/detail";
     }

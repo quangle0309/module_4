@@ -10,7 +10,7 @@
         <div>
             <h5>ID sản phẩm: <span th:text="*{id}"></span></h5>
             <h5>Tên sản phẩm: <span th:text="*{name}"></span></h5>
-            <h5>Giá: <span th:text="*{price}"></span>$</h5>
+            <h5>Giá: <span th:text="${#numbers.formatCurrency(product.price)}"></span></h5>
             <h5>Mô tả: <span th:text="*{description}"></span></h5>
             <h5>Nhà sản xuất: <span th:text="*{manufacturer}"></span></h5>
         </div>
