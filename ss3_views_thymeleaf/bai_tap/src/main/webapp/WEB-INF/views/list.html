@@ -44,13 +44,24 @@
         timer: 1500
     });
 </script>
-<script th:if="${updateMessage != null}">
-    Swal.fire({
-        icon: "success",
-        title: "Cập nhật thành công!",
-        showConfirmButton: false,
-        timer: 1500
-    });
+<input type="hidden" id="updateMessage" th:value="${updateMessage}" />
+<script th:if="${updateMessage}">
+    let updateMessage = document.getElementById("updateMessage");
+    if(updateMessage) {
+        Swal.fire({
+            icon: "success",
+            title: "Cập nhật thành công!",
+            showConfirmButton: false,
+            timer: 1500
+        })
+    } else {
+        Swal.fire({
+            icon: "error",
+            title: "Cập nhật thất bại!",
+            showConfirmButton: false,
+            timer: 1500
+        })
+    }
 </script>
 </body>
 </html>

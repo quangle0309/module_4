@@ -31,7 +31,17 @@ public class ProductRepo implements IProductRepo {
 
     @Override
     public void updateProduct(Product product) {
-        BaseRepository.entityManager.merge(product);
+        EntityTransaction transaction = BaseRepository.entityManager.getTransaction();
+        try {
+            transaction.begin();
+            BaseRepository.entityManager.merge(product);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction.isActive()) {
+                transaction.rollback();
+            }
+            throw e;
+        }
     }
 
     @Override
