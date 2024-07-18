@@ -59,4 +59,10 @@ public class ProductController {
         model.addAttribute("products", productService.searchByName(keyword));
         return "/list";
     }
+
+    @GetMapping("/{id}/detail")
+    public String detail(@PathVariable int id, Model model) {
+        model.addAttribute("product", productService.findById(id));
+        return "/detail";
+    }
 }
