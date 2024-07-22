@@ -26,42 +26,77 @@
             <td th:text="${product.description}"></td>
             <td th:text="${product.manufacturer}"></td>
             <td>
-                <a class="btn btn-sm btn-warning me-2 text-light" th:href="@{/products/{id}/detail(id=${product.getId()})}">Chi tiết</a>
-                <a class="btn btn-sm btn-primary me-2" th:href="@{/products/{id}/update(id=${product.getId()})}">Chỉnh sửa</a>
-                <a class="btn btn-sm btn-danger" th:href="@{/products/{id}/delete(id=${product.getId()})}">Xóa</a>
+                <a class="btn btn-sm btn-warning me-2 text-light"
+                   th:href="@{/products/{id}/detail(id=${product.getId()})}">Chi tiết</a>
+                <a class="btn btn-sm btn-primary me-2" th:href="@{/products/{id}/update(id=${product.getId()})}">Chỉnh
+                    sửa</a>
+                <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal"
+                        th:attr="data-id=${product.id}">Xóa
+                </button>
             </td>
         </tr>
         </tbody>
     </table>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<script th:if="${message != null}">
+<!-- Modal -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Xác nhận xóa sản phẩm</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Bạn có chắc chắn muốn xóa sản phẩm này không?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <a class="btn btn-danger" id="confirmDeleteBtn">Xóa</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let confirmDeleteModal = document.getElementById('confirmDeleteModal');
+    confirmDeleteModal.addEventListener('show.bs.modal', function (event) {
+        let button = event.relatedTarget;
+        let productId = button.getAttribute('data-id');
+        let confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
+        confirmDeleteBtn.setAttribute('href', '/products/' + productId + '/delete');
+    });
+
+    if (document.getElementById('createMessage')){
+        Swal.fire({
+            icon: "success",
+            title: "Thêm mới thành công!",
+            showConfirmButton: false,
+            timer: 1500
+        });
+    }
+
+    let updateMessage = document.getElementById("updateMessage");
     Swal.fire({
-        icon: "success",
-        title: "Thêm mới thành công!",
+        icon: updateMessage == true ? "success" : "error",
+        title: updateMessage == false ? "Cập nhật thành công!" : "Cập nhật thất bại!",
         showConfirmButton: false,
         timer: 1500
     });
-</script>
-<input type="hidden" id="updateMessage" th:value="${updateMessage}" />
-<script th:if="${updateMessage}">
-    let updateMessage = document.getElementById("updateMessage");
-    if(updateMessage) {
+
+    let deleteMessage = document.getElementById("deleteMessage");
+    if (deleteMessage) {
         Swal.fire({
-            icon: "success",
-            title: "Cập nhật thành công!",
+            icon: deleteMessage.value == "true" ? "success" : "error",
+            title: deleteMessage.value == "true" ? "Xóa thành công!" : "Xóa thất bại!",
             showConfirmButton: false,
             timer: 1500
-        })
-    } else {
-        Swal.fire({
-            icon: "error",
-            title: "Cập nhật thất bại!",
-            showConfirmButton: false,
-            timer: 1500
-        })
+        });
     }
 </script>
+<input type="hidden" id="updateMessage" th:value="${updateMessage}"/>
+<input type="hidden" id="createMessage" th:value="${createMessage}"/>
+<input type="hidden" id="deleteMessage" th:value="${deleteMessage}"/>
 </body>
 </html>

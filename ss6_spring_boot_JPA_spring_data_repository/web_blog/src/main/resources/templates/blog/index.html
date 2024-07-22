@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Trang chủ</title>
+    <th:block th:replace="~{common/layout :: head}">
+    </th:block>
+
+</head>
+<body class="bg-warning-subtle">
+<nav th:replace="~{common/layout :: navbar}">
+</nav>
+<div class="container">
+    <h4 class="text-center mt-5" th:if="${keyword != null}">Tìm kiếm cho từ khóa "<span th:text="${keyword}"></span>"</h4>
+    <div th:each="blog, iterStat : ${blogs}" class="w-75 mx-auto mt-5">
+        <div class="row">
+            <div class="col-11">
+                <h6><span>Tác giả: </span><span th:text="${blog.author}"></span></h6>
+                <a class="text-decoration-none text-dark" th:href="@{/blogs/detail/{id}(id=${blog.id})}"><h4 th:text="${blog.title}"></h4></a>
+            </div>
+            <div class="col-1 align-content-end">
+                <div class="dropdown">
+                    <div style="cursor: pointer" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-list-ul fs-3"></i>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" th:href="@{/blogs/update/{id}(id=${blog.id})}">Chỉnh sửa</a></li>
+                        <li><a class="dropdown-item" th:href="@{/blogs/delete/{id}(id=${blog.id})}">Xóa</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>
+</body>
+</html>

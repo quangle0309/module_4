@@ -32,7 +32,7 @@ public class ProductController {
     @PostMapping("/save")
     public String create(@ModelAttribute Product product, RedirectAttributes redirect) {
         productService.save(product);
-        redirect.addFlashAttribute("message", "Thêm mới thành công!");
+        redirect.addFlashAttribute("createMessage", true);
         return "redirect:/products";
     }
 
