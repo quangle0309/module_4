@@ -2,7 +2,6 @@ package com.example.library_app.controllers;
 
 import com.example.library_app.models.Book;
 import com.example.library_app.services.book.IBookService;
-import com.example.library_app.services.book.impl.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

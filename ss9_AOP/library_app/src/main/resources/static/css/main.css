@@ -1,13 +1,15 @@
 .home-card-title {
-    height: 2.5rem !important;
+    height: 3rem !important;
     overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
+    display: -webkit-box !important;
+    --webkit-box-orient: vertical !important;
+    --webkit-line-clamp: 2 !important;
 }
 
 .home-card-text {
     height: 2rem !important;
     overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
+    display: -webkit-box !important;
+    --webkit-box-orient: vertical !important;
+    --webkit-line-clamp: 2 !important;
 }

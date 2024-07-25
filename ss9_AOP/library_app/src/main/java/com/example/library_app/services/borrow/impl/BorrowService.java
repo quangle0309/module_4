@@ -58,6 +58,10 @@ public class BorrowService implements IBorrowService {
 
     private String generateBorrowCode() {
         Random random = new Random();
-        return String.format("MS-%05d", random.nextInt(100000));
+        String code;
+        do {
+            code = String.format("MS-%05d", random.nextInt(100000));
+        } while (borrowRepo.findByCode(code) != null);
+        return code;
     }
 }

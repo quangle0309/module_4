@@ -8,19 +8,15 @@
 <th:block th:replace="~{layouts/library :: navbar}"></th:block>
 <div class="container">
     <div class="row">
-        <div class="col-3 mt-5" th:each="book : ${books}">
+        <a th:href="@{/books/{id}/borrow (id=${book.id})}" class="col-3 mt-5 text-decoration-none" th:each="book : ${books}">
             <div class="card" style="width: 18rem;">
                 <img src="/image/book_card.jpg" class="card-img-top" alt="book_card">
                 <div class="card-body">
                     <h5 class="card-title home-card-title" th:text="${book.title}"></h5>
                     <p class="card-text home-card-text">Tác giả: <span th:text="${book.author}"></span></p>
-                    <div class="text-end">
-                        <a th:href="@{/books/{id}/borrow (id=${book.id})}" class="btn btn-primary">Chi tiết</a>
-                    </div>
-
                 </div>
             </div>
-        </div>
+        </a>
     </div>
     <div class="d-flex justify-content-center mt-4">
         <nav aria-label="Page navigation example">

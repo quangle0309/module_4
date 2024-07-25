@@ -33,7 +33,22 @@
         </tr>
         </tbody>
     </table>
-
+    <div class="d-flex justify-content-center mt-4">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item" th:if="${books.hasPrevious()}">
+                    <a class="page-link" th:href="@{/admin/books(page=${books.number - 1})}" aria-label="Trước">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item" th:if="${books.hasNext()}">
+                    <a class="page-link" th:href="@{/admin/books(page=${books.number + 1})}" aria-label="Sau">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </div>
 <th:block th:replace="layouts/admin :: footer"></th:block>
 <script>
