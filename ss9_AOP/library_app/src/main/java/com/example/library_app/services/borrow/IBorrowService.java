@@ -7,7 +7,9 @@ import java.util.List;
 public interface IBorrowService {
     Borrow borrowBook(Long bookId, String bookRenter);
 
-    boolean returnBook(String code);
+    void returnBook(Borrow borrow);
 
     List<Borrow> findAll();
+
+    Borrow findByCode(String code);
 }

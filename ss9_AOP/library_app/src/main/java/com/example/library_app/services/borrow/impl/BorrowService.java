@@ -37,23 +37,22 @@ public class BorrowService implements IBorrowService {
         return borrow;
     }
 
-    public boolean returnBook(String code) {
-        Borrow borrow = borrowRepo.findByCode(code);
-        if (borrow == null) {
-            return false;
-        }
 
+    public void returnBook(Borrow borrow) {
         Book book = borrow.getBook();
         book.setQuantity(book.getQuantity() + 1);
         bookRepo.save(book);
-
         borrowRepo.delete(borrow);
-        return true;
     }
 
     @Override
     public List<Borrow> findAll() {
         return borrowRepo.findAll();
+    }
+
+    @Override
+    public Borrow findByCode(String code) {
+        return borrowRepo.findByCode(code);
     }
 
     private String generateBorrowCode() {

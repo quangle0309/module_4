@@ -1,6 +1,7 @@
 package com.example.library_app.services.book;
 
 import com.example.library_app.models.Book;
+import com.example.library_app.models.Borrow;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

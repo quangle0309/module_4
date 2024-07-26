@@ -44,10 +44,11 @@ public class BorrowController {
 
     @PostMapping("/return")
     public String returnBook(@RequestParam("code") String code) {
-        boolean success = borrowService.returnBook(code);
-        if (!success) {
+        Borrow borrow = borrowService.findByCode(code);
+        if (borrow == null) {
             return "error";
         }
+        borrowService.returnBook(borrow);
         return "return_success";
     }
 }

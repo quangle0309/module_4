@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -22,7 +21,7 @@ public class LoggingAspect {
     @After("execution(* com.example.library_app.services.borrow.impl.BorrowService.borrowBook(..))")
     public void logBorrowAction() {
 
-        try ( BufferedWriter bw = new BufferedWriter(new FileWriter("D:\\module_4\\ss9_AOP\\library_app\\src\\main\\java\\com\\example\\library_app\\aspect\\file\\log.csv", true)))
+        try ( BufferedWriter bw = new BufferedWriter(new FileWriter("D:\\module_4\\ss9_AOP\\library_app\\src\\main\\java\\com\\example\\library_app\\aspect\\file\\logAdvice.csv", true)))
         {
             bw.write("Một cuốn sách đã được mượn vào lúc " +  LocalDateTime.now());
             bw.newLine();
@@ -33,9 +32,9 @@ public class LoggingAspect {
 
     @After("execution(* com.example.library_app.services.borrow.impl.BorrowService.returnBook(..))")
     public void logReturnAction() {
-        try ( BufferedWriter bw = new BufferedWriter(new FileWriter("D:\\module_4\\ss9_AOP\\library_app\\src\\main\\java\\com\\example\\library_app\\aspect\\file\\log.csv", true)))
+        try ( BufferedWriter bw = new BufferedWriter(new FileWriter("D:\\module_4\\ss9_AOP\\library_app\\src\\main\\java\\com\\example\\library_app\\aspect\\file\\logAdvice.csv", true)))
         {
-            bw.write("Một cuốn sách đã được trả vào lúc" +  LocalDateTime.now());
+            bw.write("Một cuốn sách đã được trả vào lúc " +  LocalDateTime.now());
             bw.newLine();
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -46,7 +45,7 @@ public class LoggingAspect {
     public void logVisitor() {
         try ( BufferedWriter bw = new BufferedWriter(new FileWriter("D:\\module_4\\ss9_AOP\\library_app\\src\\main\\java\\com\\example\\library_app\\aspect\\file\\log.csv", true)))
         {
-            bw.write("Một người dùng đã truy cập thư viện vào lúc" +  LocalDateTime.now());
+            bw.write("Một người dùng đã truy cập thư viện vào lúc " +  LocalDateTime.now());
             bw.newLine();
         } catch (IOException e) {
             throw new RuntimeException(e);
