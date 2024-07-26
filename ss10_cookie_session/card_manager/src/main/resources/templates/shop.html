@@ -8,22 +8,21 @@
 <body>
 <th:block th:replace="~{/layout :: navbar}"></th:block>
 <div class="container mt-5">
-    <table class="table table-hover table-bordered">
-        <thead>
-        <tr>
-            <th>Tên sản phẩm</th>
-            <th>Giá</th>
-            <th>Thêm vào giỏ hàng</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="product: ${products}">
-            <td th:text="${product.name}"></td>
-            <td th:text="${product.price}"></td>
-            <td><a class="btn btn-sm btn-primary" th:href="@{/add/__${product.id}__(action='list')}">Thêm vào giỏ hàng</a></td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="row">
+        <div class="col-3 mt-5" th:each="product : ${products}">
+            <a th:href="@{/{id}/detail(id=${product.id})}" class="text-decoration-none">
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://cdn-image.halana.vn/News/1/681/thiet-bi-dien-tu-la-gi.jpg" class="card-img-top" alt="book_card">
+                        <div class="card-body">
+                            <h5 class="card-title home-card-title" th:text="${product.name}"></h5>
+                            <p class="card-text home-card-text">Giá bán: <span th:text="${product.price}"></span>$</p>
+                            <a class="btn btn-sm btn-primary mt-2" th:href="@{/add/__${product.id}__(action='list')}">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+            </a>
+
+        </div>
+    </div>
 </div>
 </body>
 </html>

@@ -64,4 +64,10 @@ public class ProductController {
         }
         return "redirect:/shopping-cart";
     }
+
+    @GetMapping("/{id}/detail")
+    public String showDetail(@PathVariable("id") Long id, Model model) {
+        model.addAttribute("product", productService.findProductById(id));
+        return "detail";
+    }
 }
