@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giỏ hàng của bạn</title>
+    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+    <script src="/bootstrap/bootstrap.min.js" async></script>
+</head>
+<body>
+<th:block th:replace="~{/layout :: navbar}"></th:block>
+<div class="container">
+    <h3 class="mt-5 text-center">Giỏ hàng của bạn</h3>
+    <form th:action="@{/checkout}" th:object="${cart}" method="post">
+        <h6>Số lượng mặt hàng: <span th:text="${cart.countItemQuantity()}"></span></h6>
+        <h6>Tổng số lượng sản phẩm: <span th:text="${cart.countProductQuantity()}"></span></h6>
+        <table class="table table-hover table-bordered">
+            <tr>
+                <th>Sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Giá</th>
+                <th>Thao tác</th>
+            </tr>
+            <tr th:each="product: ${cart.products}">
+                <td th:text="${product.getKey().name}"></td>
+                <td>
+                    <a th:href="@{/change/__${product.getKey().id}__(quantity=${product.getValue() - 1})}">-</a>
+                    <span th:text="${product.getValue()}"></span>
+                    <a th:href="@{/change/__${product.getKey().id}__(quantity=${product.getValue() + 1})}">+</a>
+                </td>
+                <td th:text="${product.getKey().price}"></td>
+                <td>
+                    <a th:href="@{/remove/{id}(id=${product.getKey().id})}">Xóa</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Tổng tiền</td>
+                <td th:text="${cart.countTotalPayment()}"></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <button type="submit" class="btn btn-primary">Thanh toán</button>
+
+    </form>
+</div>
+
+</body>
+</html>
