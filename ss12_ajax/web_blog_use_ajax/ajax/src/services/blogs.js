@@ -1,12 +1,12 @@
-const getAllBlogs = () => {
+const getAllBlogs = (page) => {
     return $.ajax({
-        header: {
+        headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         type: 'GET',
-        url: 'http://localhost:8080/api/blogs'
-    })
+        url: `http://localhost:8080/api/blogs?page=${page}`
+    });
 }
 
 
@@ -19,6 +19,6 @@ const searchByTitle = () => {
             'Content-Type' : 'application/json'
         },
         type: 'GET',
-        url: 'http://localhost:8080/api/blogs/search?keyword='+ keyword
+        url: `http://localhost:8080/api/blogs/search?keyword=${keyword}`
     })
 }

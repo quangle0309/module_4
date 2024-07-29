@@ -17,7 +17,7 @@ async function header() {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/blogs/list">Danh sách blog</a>
+                        <a class="nav-link active" aria-current="page" href="/api/blogs">Danh sách blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/blogs/create">Đăng blog</a>
