@@ -31,7 +31,7 @@ public class BlogRestController {
     public ResponseEntity<?> getBlogDetail(@PathVariable Long id){
         Blog blog = blogService.findBlogById(id);
         if (blog == null) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(blog, HttpStatus.OK);
     }
