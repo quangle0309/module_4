@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/blog")
+@RequestMapping("api/blogs")
 public class BlogRestController {
     @Autowired
     private IBlogService blogService;
@@ -27,7 +27,7 @@ public class BlogRestController {
         return new ResponseEntity<>(blogs, HttpStatus.OK);
     }
 
-    @GetMapping("/{id}/detail")
+    @GetMapping("/{id}")
     public ResponseEntity<?> getBlogDetail(@PathVariable Long id){
         Blog blog = blogService.findBlogById(id);
         if (blog == null) {
