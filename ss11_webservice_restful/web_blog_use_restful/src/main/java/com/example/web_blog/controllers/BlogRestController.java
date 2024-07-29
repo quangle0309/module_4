@@ -21,6 +21,9 @@ public class BlogRestController {
     @GetMapping
     public ResponseEntity<?> getAllBlog(){
         List<Blog> blogs = blogService.findAll();
+        if (blogs.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
         return new ResponseEntity<>(blogs, HttpStatus.OK);
     }
 

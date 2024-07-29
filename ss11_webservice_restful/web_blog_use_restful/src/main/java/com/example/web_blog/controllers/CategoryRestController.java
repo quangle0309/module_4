@@ -20,6 +20,9 @@ public class CategoryRestController {
     @GetMapping
     public ResponseEntity<?> getAllCategories() {
         List<Category> categories = categoryService.findAll();
+        if (categories.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
         return new ResponseEntity<>(categories, HttpStatus.OK);
     }
 }
