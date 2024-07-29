@@ -30,12 +30,18 @@ public class BlogRestController {
     @GetMapping("/{id}/detail")
     public ResponseEntity<?> getBlogDetail(@PathVariable Long id){
         Blog blog = blogService.findBlogById(id);
+        if (blog == null) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
         return new ResponseEntity<>(blog, HttpStatus.OK);
     }
 
     @GetMapping("/category/{categoryId}")
     public ResponseEntity<?> getBlogList(@PathVariable Long categoryId){
         List<Blog> blogs = blogService.findAllByCategoryId(categoryId);
+        if (blogs.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
         return new ResponseEntity<>(blogs, HttpStatus.OK);
     }
 }
