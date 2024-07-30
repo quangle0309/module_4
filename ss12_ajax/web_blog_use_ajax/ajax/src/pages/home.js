@@ -1,18 +1,19 @@
 async function listBlogs(page = 0) {
     const listBlogs = await getAllBlogs(page);
-    renderBlogs(listBlogs);
+    $('#list-blogs').append(renderBlogs(listBlogs));
     renderPagination(listBlogs);
 }
 
 async function searchBlogs(page = 0) {
     const listBlogs = await searchByTitle(page);
-    renderBlogs(listBlogs);
+    $('#list-blogs').html(renderBlogs(listBlogs));
     renderPagination(listBlogs);
 }
 
 function renderBlogs(listBlogs) {
     if (!listBlogs) {
         $('#list-blogs').html('<h3 class="text-center">Danh sách rỗng!</h3>');
+        renderPagination(0);
         return;
     }
     let blog = '';
@@ -42,18 +43,17 @@ function renderBlogs(listBlogs) {
         </div>
         <hr>`;
     });
-    $('#list-blogs').html(blog);
+    return blog;
 }
 
 function renderPagination(pageData) {
     const paginationControls = $('#pagination-controls');
     let pagination = '';
     if (pageData.totalPages > 1) {
-        if (pageData.number > 0) {
-            pagination += `<button class="btn btn-primary" onclick="listBlogs(${pageData.number - 1})">Trang trước</button>`;
-        }
         if (pageData.number < pageData.totalPages - 1) {
-            pagination += `<button class="btn btn-primary ms-2" onclick="listBlogs(${pageData.number + 1})">Trang sau</button>`;
+            pagination += `<button class="btn btn-primary ms-2" onclick="listBlogs(${pageData.number + 1})">Xem thêm</button>`;
+        } else {
+            pagination = "";
         }
     }
     paginationControls.html(pagination);
