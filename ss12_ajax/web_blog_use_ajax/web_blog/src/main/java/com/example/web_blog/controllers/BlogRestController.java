@@ -21,17 +21,9 @@ public class BlogRestController {
     private IBlogService blogService;
 
     @GetMapping
-    public ResponseEntity<?> getAllOrSearchBlogs(@RequestParam(defaultValue = "0") int page,
-                                                 @RequestParam(defaultValue = "") String keyword) {
-        Pageable pageable = PageRequest.of(page, 5);
-        Page<Blog> blogsPage;
-
-        if (keyword.isEmpty()) {
-            blogsPage = blogService.findAll(pageable);
-        } else {
-            blogsPage = blogService.findAllByTitleContaining(keyword, pageable);
-        }
-
+    public ResponseEntity<?> getAll(@RequestParam(defaultValue = "0") int page) {
+        Pageable pageable = PageRequest.of(page, 3);
+        Page<Blog> blogsPage = blogService.findAll(pageable);
         if (blogsPage.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
@@ -58,7 +50,7 @@ public class BlogRestController {
 
     @GetMapping("/search")
     public ResponseEntity<?> searchBlog(@RequestParam(defaultValue = "") String keyword, @RequestParam(defaultValue = "0") int page){
-        Pageable pageable = PageRequest.of(page, 5);
+        Pageable pageable = PageRequest.of(page, 3);
         Page<Blog> blogsPage = blogService.findAllByTitleContaining(keyword, pageable);
         if (blogsPage.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
